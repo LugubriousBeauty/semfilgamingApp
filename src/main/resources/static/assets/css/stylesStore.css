@@ -179,7 +179,7 @@ main {
 }
 
 .search{
-    background: rgba(255, 255, 255, 0);
+    background: rgba(255, 255, 255, 0.322);
     border: 1px solid #a81515;
     border-radius: 10px;
     width: 17rem;

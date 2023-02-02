@@ -78,6 +78,9 @@ const app = createApp({
                 currency: 'USD',
             });
             return USDollar.format(aux)
+        },
+        redirect() {
+            location.href = '../../store.html'
         }
     }
 })
