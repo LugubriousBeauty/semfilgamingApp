@@ -134,7 +134,7 @@ public class ProductController {
     }
 
     @PatchMapping("/products/add")
-    public ResponseEntity<Object> addProductoStock(Authentication authentication, @RequestParam Long Id,
+    public ResponseEntity<Object> addProductStock(Authentication authentication, @RequestParam Long Id,
                                                    @RequestParam int amount){
         Product selectedProduct = productService.getProductById(Id);
         if(selectedProduct.equals(null)){
