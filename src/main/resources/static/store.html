@@ -56,13 +56,13 @@
                 <aside class="aside-home p-4 animate__animated animate__slideInDown">
                     <ul class="nav d-flex flex-wrap gap-3">
                         <li class="nav-item">
-                            <button @click.prevent="filterPriceMay" class="btn-login me-3">Price: Low to High</button>
+                            <button @click.prevent="filterPriceMen" class="btn-login me-3">Price: Low to High</button>
                         </li>
                         <li class="nav-item">
-                            <button @click.prevent="filterPriceMen" class="btn-login">Price: High to Low</button>
+                            <button @click.prevent="filterPriceMay" class="btn-login">Price: High to Low</button>
                         </li>
                         <li class="nav-item">
-                            <select class="btn-login ms-4" v-model="inputGenres">
+                            <select class="btn-login btn-select" v-model="inputGenres">
                                 <option selected disabled hidden value="Select">Select Genre</option>
                                 <option value="all">All</option>
                                 <template v-for="gen in genres">
@@ -89,10 +89,10 @@
     
                 <ul class="nav">
                     <li class="nav-item">
-                        <button @click.prevent="filterPriceMay" class="btn-login ms-3">Price: Low to High</button>
+                        <button @click.prevent="filterPriceMen" class="btn-login ms-3">Price: Low to High</button>
                     </li>
                     <li class="nav-item">
-                        <button @click.prevent="filterPriceMen" class="btn-login ms-3">Price: High to Low</button>
+                        <button @click.prevent="filterPriceMay" class="btn-login ms-3">Price: High to Low</button>
                     </li>
                     <li class="nav-item">
                         <select class="btn-login ms-3" v-model="inputGenres">
@@ -166,6 +166,10 @@
                 </div>
             </article>
         </main>
+        <div class="w-100 d-flex justify-content-center">
+            <div class="div-home">
+            </div>
+        </div>
         <footer class="d-flex justify-content-center pb-3">
             <div class="nav-neumporphism footer-home mt-5">
                 <div class="d-flex justify-content-between align-items-center p-4 pb-2">
