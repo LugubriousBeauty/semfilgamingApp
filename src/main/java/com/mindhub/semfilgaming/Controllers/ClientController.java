@@ -87,6 +87,29 @@ public class ClientController {
         return new ResponseEntity<>("Success", HttpStatus.OK);
     }
 
+    @PostMapping("/create-admin")
+    public ResponseEntity<Object> createAdmin(@RequestParam String firstName, @RequestParam String lastName,
+                                                 @RequestParam String email, @RequestParam String password){
+
+        if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            return new ResponseEntity<>("Missing data", HttpStatus.FORBIDDEN);
+        }
+
+        if (clientService.getClientByEmail(email) !=  null) {
+            return new ResponseEntity<>("Email already in use", HttpStatus.FORBIDDEN);
+        }
+
+        LocalDate localDate = LocalDate.now();
+
+        Client client = new Client(email, passwordEncoder.encode(password), firstName, lastName, localDate);
+        client.setAdmin(true);
+        client.setEnabled(true);
+        clientService.saveClient(client);
+
+
+        return new ResponseEntity<>("Success", HttpStatus.OK);
+    }
+
     @RequestMapping(path="/confirm-account", method= {RequestMethod.GET, RequestMethod.POST})
     public ResponseEntity<Object> confirmUserAccount(@RequestParam("token")String confirmationToken)
     {

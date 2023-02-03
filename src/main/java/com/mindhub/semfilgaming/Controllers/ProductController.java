@@ -133,15 +133,12 @@ public class ProductController {
         return new ResponseEntity<>("New product added successfully", HttpStatus.CREATED);
     }
 
-    @PatchMapping("/products/add")
-    public ResponseEntity<Object> addProductStock(Authentication authentication, @RequestParam Long Id,
+    @PatchMapping("/products/add/{Id}")
+    public ResponseEntity<Object> addProductStock(Authentication authentication, @PathVariable Long Id,
                                                    @RequestParam int amount){
         Product selectedProduct = productService.getProductById(Id);
         if(selectedProduct.equals(null)){
             return new ResponseEntity<>("Product not found", HttpStatus.FORBIDDEN);
-        }
-        if(amount<=0){
-            return new ResponseEntity<>("Missing amount", HttpStatus.FORBIDDEN);
         }
 
         selectedProduct.setStock(selectedProduct.getStock()+amount);

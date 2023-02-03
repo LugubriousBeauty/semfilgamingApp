@@ -106,7 +106,10 @@ createApp({
             } else {
                 this.quantity = this.quantity*(-1)
                 axios.patch(`http://localhost:8080/api/products/add/${this.selectedGame}`, `amount=${this.quantity}`)
-                .then(res => this.loadData())
+                .then(res => {
+                    Swal.fire('Units removed successfully', ':D', 'success')
+                    this.loadData()
+                })
                 .catch(err => console.log(err))
             }
         },
@@ -115,7 +118,10 @@ createApp({
                 Swal.fire('Units must be greater or equal to one', ':C', 'error')
             } else {
                 axios.patch(`http://localhost:8080/api/products/add/${this.selectedGame}`, `amount=${this.quantity}`)
-                .then(res => this.loadData())
+                .then(res => {
+                    Swal.fire('Added units successfully', ':D', 'success')
+                    this.loadData()
+                })
                 .catch(err => console.log(err))
             }
         },
