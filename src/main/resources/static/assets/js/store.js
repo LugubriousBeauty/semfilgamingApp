@@ -48,10 +48,7 @@ createApp({
         },
         modalDescription(game) {
             const genreDTO = game.genreDTOS
-            let genreNameObject
-            genreDTO.forEach(game => {
-                genreNameObject = game.genre
-            })
+            let aux = genreDTO.map(game => game.genre.genreName).join(" - ")
             Swal.fire({
                 background: `${game.background}`,
                 customClass: {
@@ -63,7 +60,7 @@ createApp({
                         <div>
                             <h2 class="text-light fw-bold text-center mb-0">${game.gameName}</h2>
                             <div class="d-flex justify-content-center">
-                                <video class="rounded mt-3 video-card" src="${game.trailers}" width="800" autoplay height="600"></video>
+                                <video class="rounded mt-3 video-card" src="${game.trailers}" width="800" controls height="600"></video>
                             </div>
                         </div>
                         <div class="d-flex mx-auto flex-column align-items-center justify-content-center">
@@ -78,7 +75,7 @@ createApp({
                             </div>
                         </div>
                         <div>
-                            <p class="mt-4 text-light fw-bold">Genre: ${genreNameObject.genreName}</p>
+                            <p class="mt-4 text-light fw-bold">Genre: ${aux}</p>
                         </div>
                         </div>
                     </div>
@@ -158,7 +155,7 @@ createApp({
     },
     computed:{
         filterGenresinput(){ 
-            if(this.inputGenres == "" || this.inputGenres == "all") {
+            if(this.inputGenres == "Select" || this.inputGenres == "all") {
                 this.productsFilter = this.products
             } else {
                 let newArray = []

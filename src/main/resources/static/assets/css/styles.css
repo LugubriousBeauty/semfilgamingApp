@@ -814,17 +814,37 @@ a {
 }
 
 @media (max-width: 900px) {
-}
-
-@media (max-width: 1600px) {
     .video-card {
         height: 9rem;
         width: 90vw;
     }
+}
+
+@media (max-width: 1600px) {
     .my-swal {
         width: 70vw;
     }
     .div-card {
         width: 60vw;
+    }
+}
+
+.div-home {
+    border: 2px solid rgba(255, 0, 34, 0.534);
+    border-radius: 15px;
+    background-image: url(../img/bloquote_image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 25% 75%;
+    height: 24rem;
+    width: 94vw;
+    margin-top: 3rem;
+}
+
+@media (max-width: 900px) {
+    .div-home {
+        width: 70vw;
+        padding-bottom: 3rem;
+        height: auto !important;
     }
 }

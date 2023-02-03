@@ -70,9 +70,10 @@ a {
 }
 
 .search{
-    background: rgba(255, 255, 255, 0.062);
+    background: rgba(241, 241, 241, 0.76);
     border: 1px solid #a81515;
     border-radius: 10px;
+    height: 2rem;
 }
 
 .btn-login {
@@ -329,7 +330,7 @@ main {
 
 .hr-payment {
     border: 1.6px solid rgb(255, 3, 36);
-    width: 30vw;
+    width: 20vw;
     margin: 0 auto;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -498,7 +499,7 @@ main {
 /* Modal */
 .modal-content {
     border: 2px solid rgba(255, 0, 34, 0.534) !important;
-    background: rgba( 255, 255, 255, 0.05 ) !important;
+    background: rgba(0, 0, 0, 0.884) !important;
     backdrop-filter: blur( 6px ) !important;
     -webkit-backdrop-filter: blur( 6px ) !important;
 }
